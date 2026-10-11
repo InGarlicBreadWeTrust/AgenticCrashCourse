@@ -59,3 +59,16 @@ dist/
 
 # Docker
 docker-compose.override.yml
+
+# --- Stray / unexpanded-shell paths -----------------------------------------
+# A literal top-level `~` can appear when a tilde fails to expand
+# (e.g. `git add ~/path` typed without quotes, or a heredoc that didn't expand).
+# Ignore it so it never gets committed again.
+~
+/*/~
+*/*/~
+
+# Backups / temp artifacts
+*.bak
+*.tmp
+*.orig
